@@ -1,0 +1,16 @@
+<VirtualHost *:80>
+#Basic
+	ServerAdmin admin@DOMAIN_NAME
+	ServerName DOMAIN_NAME
+	DocumentRoot BASE_DIR/DOMAIN_NAME/www/
+
+#Log
+	ErrorLog BASE_DIR/DOMAIN_NAME/logs/error.log
+	LogLevel warn
+	CustomLog BASE_DIR/DOMAIN_NAME/logs/access.log combined
+
+# Virtual Directories and Others
+	Include BASE_DIR/DOMAIN_NAME/conf/httpd.conf.d/*.conf
+
+</VirtualHost>
+

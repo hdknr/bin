@@ -1,0 +1,18 @@
+defscrollback 1000
+shelltitle "$ |bash"
+startup_message off
+vbell off
+hardstatus alwayslastline "%c | %<%-Lw%{= GK}%>%n%f* %t%{-} %+Lw%=%> | %l"
+bind w windowlist -b
+bindkey -k k1 select 1
+bindkey -k k2 select 2
+bindkey -k k3 select 3
+bindkey -k k4 select 4
+bindkey -k k5 select 5
+bindkey -k k6 select 6
+bindkey -k k7 select 7
+bindkey -k k8 select 8
+bindkey -k k9 select 9
+bind h
+bind k
+bind 'K' kill
