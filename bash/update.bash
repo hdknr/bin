@@ -7,7 +7,7 @@ else
     BASE=`dirname $P`
 fi
 
-source  $BASE/Linux/dist.sh
+source  $BASE/bash/dist.bash
 
 if [ -n "$NTPSERVER" ] ;then
     sudo ntpdate $NTPSERVER ;
@@ -23,13 +23,7 @@ esac
 
 #
 # bin/* 
-for x in ~/bin/* ;do 
-    if [ -d $x ]; then  
-        if [ -d $x/.svn ] ; then 
-            echo $x ; 
-            svn update  $x ; 
-        fi;
-    fi; 
-done
-#
-
+pushd .
+cd ~/bin/
+git pull
+popd 
