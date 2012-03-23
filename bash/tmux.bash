@@ -31,3 +31,15 @@ function tve(){
         tmux attach-session -t "$SN"
     fi
 }
+
+
+function _tmux_list()
+{   
+    cur=$2
+    if [ "$cur" != "" ] ; then
+        COMPREPLY=( $( tmux ls | grep "^$cur" | cut -f3 -d:  )  )
+    else
+        COMPREPLY=( $( tmux ls  | cut -f1 -d:  )  )
+    fi
+}
+complete -F _tmux_list tma
