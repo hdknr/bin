@@ -1,20 +1,38 @@
 " $ ln -s bin/Linux/res/default.vimrc .vimrc
 "
-:syntax on
-:filetype plugin on
-:colorscheme elflord
-" ** pydiction **
-:let g:pydiction_location = '/home/hdknr/.vim/after/ftplugin/pydiction/complete-dict'
-:let g:pydiction_menu_height = 20
+filetype off
+
+"-----  Vundle 
+set rtp+=~/.vim/vundle/
+call vundle#rc()
+
+Bundle 'thinca/vim-ref'
+Bundle 'tpope/vim-surround'
+Bundle 'mattn/gist-vim'
+Bundle 'hdknr/orevim'
+"Bundle 'Shougo/neocomplcache'
+"Bundle 'Shogo/unite.vim'
+"Bundle 'scrooloose/nerdcommenter'
+"Bundle 'thinca/vim-puickrun'
+"Bundle 'kana/vim-fakeclip'
+
+
 "
-:set ts=4
-:set sw=4
-:set expandtab
-:colorscheme elflord
+syntax on
+filetype plugin on
+colorscheme elflord
+" ** pydiction **
+let g:pydiction_location = '/home/hdknr/.vim/after/ftplugin/pydiction/complete-dict'
+let g:pydiction_menu_height = 20
+"
+set ts=4
+set sw=4
+set expandtab
+colorscheme elflord
 
 " ** github(gist) **
-:let g:github_user=$GITHUB_API_USER
-:let g:github_token=$GITHUB_API_TOKEN
+let g:github_user=$GITHUB_API_USER
+let g:github_token=$GITHUB_API_TOKEN
 
 " taglist si ctags
 "let Tlist_Ctags_Cmd='/usr/bin/ctags'
@@ -85,3 +103,4 @@ set incsearch
 " To display line numbers on the left margin, add this to the .vimrc:
 " Show line number
 set number
+

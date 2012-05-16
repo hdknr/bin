@@ -19,9 +19,11 @@
 .vim
 =====
 
-- ln -s $HOME/bin/home/.vimrc $HOME/.vimrc
-- mkdir ~/.vim
-- configure plugin or others
+Use vim Vundle
+
+- http://note.harajuku-tech.org/vim-vundle
+
+
 
 home
 ======
