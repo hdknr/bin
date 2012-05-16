@@ -16,14 +16,17 @@
 - put __localconfig__.bash or symlink to ~/bin/bash/__some__.bash on ~/.bash_extra
 - source .bashrc
 
-.vim
-=====
+.vim and .vimrc
+==================
 
 Use vim Vundle
 
 - http://note.harajuku-tech.org/vim-vundle
 
+::
 
+    $ cd
+    $ ln -s bin/home/.vimrc 
 
 home
 ======
