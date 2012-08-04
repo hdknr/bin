@@ -9,3 +9,9 @@ function  USERADD(){
         echo "user exists"
     fi
 }
+
+function CPUS()
+{
+    echo "number of CPU"
+    cat /proc/cpuinfo | grep processor | wc -l
+}
