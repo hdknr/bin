@@ -20,3 +20,7 @@ function FF()
 {
     /Applications/Firefox.app/Contents/MacOS/firefox-bin -ProfileManager
 }
+function GVIM()
+{
+    /Applications/MacVim.app/Contents/MacOS/Vim -g -f
+}

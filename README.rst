@@ -28,6 +28,10 @@ Use vim Vundle
     $ cd
     $ ln -s bin/home/.vimrc 
 
+::
+
+    :BundleInstall
+
 home
 ======
 
