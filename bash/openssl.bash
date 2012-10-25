@@ -36,3 +36,23 @@ function PUBKEY_DUMP()
 {
     openssl  pkey -pubin -in $1 -text -noout
 } 
+
+function MKPKCS12()
+{ 
+    USAGE="MKPKCS12 key cert [output [ intermidiate ] ]";
+    # $ openssl pkcs12 -export -in sample.crt -inkey sample.key -certfile sample.ca-bundle -out sample.pfx
+    if [ $# -lt 2 ]; then
+        echo $USAGE;
+    fi
+    KEY="-inkey $1";
+    CRT="-in $2";
+    if [ $# -gt 2 ]; then
+        OUT="-out $3";
+        if [ $# -gt 3 ]; then
+            MID="-certfile $4";
+        fi
+    else
+        OUT="-out ${1%.*}.pfx" ;
+    fi
+    openssl pkcs12 -export $CRT $KEY $MID $OUT
+}
