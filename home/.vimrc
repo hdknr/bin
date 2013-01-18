@@ -2,6 +2,10 @@
 "
 filetype off
 
+"
+source ~/bin/home/.vimrc.neobundle
+
+
 syntax on
 filetype plugin on
 colorscheme elflord

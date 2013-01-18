@@ -13,6 +13,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
 NeoBundle 'Shougo/vimproc'
 
+
+"
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'hdknr/orevim'
+"
+
 " My Bundles here:
 "
 " Note: You don't set neobundle setting in .gvimrc!
@@ -20,12 +28,16 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+
 " vim-scripts repos
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
-NeoBundle 'rails.vim'
+" NeoBundle 'rails.vim'
+NeoBundle 'python_ifold' 
+
 " Non github repos
 NeoBundle 'git://git.wincent.com/command-t.git'
+
 " Non git repos
 NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
 NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
