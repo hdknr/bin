@@ -2,24 +2,6 @@
 "
 filetype off
 
-"-----  Vundle 
-set rtp+=~/.vim/vundle/
-call vundle#rc()
-
-Bundle 'thinca/vim-ref'
-Bundle 'tpope/vim-surround'
-Bundle 'mattn/gist-vim'
-Bundle 'hdknr/orevim'
-Bundle 'python_ifold' 
-"Bundle 'python_fold' 
-"Bundle 'Shougo/neocomplcache'
-"Bundle 'Shogo/unite.vim'
-"Bundle 'scrooloose/nerdcommenter'
-"Bundle 'thinca/vim-puickrun'
-"Bundle 'kana/vim-fakeclip'
-
-
-"
 syntax on
 filetype plugin on
 colorscheme elflord
