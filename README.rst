@@ -20,6 +20,7 @@
 ==================
 
 Use vim Vundle
+---------------------
 
 - http://note.harajuku-tech.org/vim-vundle
 
@@ -31,6 +32,17 @@ Use vim Vundle
 ::
 
     :BundleInstall
+
+Neobundle
+------------
+
+- http://note.harajuku-tech.org/neobundle-vim
+
+::
+
+    $ mkdir -p ~/.vim/bundle
+    $ git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+    $ ln -s ~/bin/home/.vimrc .vimrc
 
 home
 ======
