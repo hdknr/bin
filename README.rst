@@ -19,6 +19,13 @@
 .vim and .vimrc
 ==================
 
+Requiremeint
+--------------------
+
+.. code-block:: bash
+    
+    sudo aptitude install git mercurial subversion
+
 Use vim Vundle
 ---------------------
 
