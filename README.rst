@@ -1,3 +1,10 @@
+PATH
+======
+
+for bash::
+
+   export PATH=~/bin:$PATH
+
 .bash_extra
 ============
 
