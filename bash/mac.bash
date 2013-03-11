@@ -11,6 +11,16 @@ function CLEAN()
   fi
 }
 
+VBMOUNT()
+{
+# $1 VirtualBox instance hostname in /etc/hosts
+if [ ! -d $1 ]; then
+   # create directory
+   mkdir ~/Desktop/$1
+fi
+mount_smbfs //hdknr@$1/hdknr  ~/Desktop/$1
+}
+
 function Address()
 {
     /Applications/Address\ Book.app/Contents/MacOS/Address\ Book

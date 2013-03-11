@@ -1,3 +1,4 @@
 *.pyc
 vim/github
 kerl
+.DS_Store
