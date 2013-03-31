@@ -44,7 +44,7 @@ NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
 
 " ...
 
-filetype plugin indent on     " Required!
+" filetype plugin indent on     " Required!
 "
 " Brief help
 " :NeoBundleList          - list configured bundles
