@@ -33,7 +33,7 @@ NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 NeoBundle 'L9'
 NeoBundle 'FuzzyFinder'
 " NeoBundle 'rails.vim'
-NeoBundle 'python_ifold' 
+ NeoBundle 'python_ifold' 
 
 " Non github repos
 NeoBundle 'git://git.wincent.com/command-t.git'
@@ -44,7 +44,7 @@ NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
 
 " ...
 
-filetype plugin indent on     " Required!
+" filetype plugin indent on     " Required!
 "
 " Brief help
 " :NeoBundleList          - list configured bundles
