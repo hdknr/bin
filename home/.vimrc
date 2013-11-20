@@ -91,4 +91,9 @@ set incsearch
 " To display line numbers on the left margin, add this to the .vimrc:
 " Show line number
 set number
+"
+"
+let g:xml_syntax_folding=0
+au FileType xml,xml,xhtml set foldmethod=syntax
+set foldlevel=100 "Don't autofold anything
 
