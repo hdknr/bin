@@ -15,6 +15,10 @@ def install_packages():
     command = "curl %s | while read p ;do sudo aptitude install $p -y ;done" % url
     cuisine.run( command  )
 
-def test():
+def clone_packages():
+    # do localaly : dpkg --get-selections | grep -vi kernel > packages.list
+    # copy to remote    : put('packages.list','$HOME/packages.list')
+    # install   : 
+    #   cuisine.run('sudo dpkg --set-selections < $HOME/packages.list && sudo dselect')
+    pass     
 
-    print "test"
