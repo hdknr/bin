@@ -11,7 +11,7 @@ def _install_deb_packages(path):
     cuisine.run( command  )
 
 def _run( command ):
-    with open('run.log','w') as log: 
+    with open('run.log','a') as log: 
         log.write( cuisine.run( command ) )
 ####
 
@@ -38,11 +38,16 @@ def clone_packages():
 
 def install_rbenv():
 #    _install_deb_packages('/fabric/res/ubuntu.packages.rbenv.list' )
-    _run("sudo apt-get install rbenv")
-    
+#    _run("sudo apt-get install rbenv")
+#    _run("rbenv init - bash")
+    _run("git clone https://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build")
 
 def install_bin():
     _run("git clone https://github.com/hdknr/bin.git")
 
 def update_bin():
     _run("cd bin && git pull")
+
+def setup_env():
+    install_bin()
+    _run("mkdir -p $HOME/.bash_extra")
