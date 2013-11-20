@@ -37,10 +37,18 @@ def clone_packages():
     pass     
 
 def install_rbenv():
-#    _install_deb_packages('/fabric/res/ubuntu.packages.rbenv.list' )
-#    _run("sudo apt-get install rbenv")
-#    _run("rbenv init - bash")
+    _install_deb_packages('/fabric/res/ubuntu.packages.rbenv.list' )
+    _run("sudo apt-get install rbenv")
+    _run("rbenv init - bash")
     _run("git clone https://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build")
+    _run("mkdir -p $HOME/.bash_extra")
+    _run("ln -s $HOME/bin/env/rbenv.bash $HOME/.bash_extra")
+
+    # rbenv install 1.9.3-p448
+    # rbenv global 1.9.3-p448
+
+def install_pyenv():
+    _run("git clone git://github.com/yyuu/pyenv.git .pyenv")
 
 def install_bin():
     _run("git clone https://github.com/hdknr/bin.git")
