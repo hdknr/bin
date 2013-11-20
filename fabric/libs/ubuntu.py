@@ -10,6 +10,11 @@ def _install_deb_packages(path):
     command = "curl %s | while read p ;do sudo aptitude install $p -y ;done" % url
     cuisine.run( command  )
 
+def _fetch_file(path,to):
+    url =URL(path)
+    command = "curl %s > %s" % (url,to)
+    cuisine.run( command  )
+
 def _run( command ):
     with open('run.log','a') as log: 
         log.write( cuisine.run( command ) )
@@ -48,6 +53,7 @@ def install_rbenv():
     # rbenv global 1.9.3-p448
 
 def install_pyenv():
+    _install_deb_packages('/fabric/res/ubuntu.packages.pyenv.list' )
     _run("git clone git://github.com/yyuu/pyenv.git .pyenv")
 
 def install_bin():
