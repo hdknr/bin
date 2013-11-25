@@ -2,3 +2,5 @@
 vim/github
 kerl
 .DS_Store
+*.fab
+*.log

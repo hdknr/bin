@@ -34,3 +34,8 @@ function SshHome()
 {
 ssh -p $TO_HOME localhost 
 }
+
+function SshHub()
+{
+ssh -i $HUB_KEY  $HUB_USER@$HUB_HOST
+}
