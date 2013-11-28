@@ -92,8 +92,11 @@ set incsearch
 " Show line number
 set number
 "
-"
 let g:xml_syntax_folding=0
-au FileType xml,xml,xhtml set foldmethod=syntax
+let g:html_syntax_folding=3
+"" au FileType html setlocal foldmethod=syntax
+" au FileType html,xml,xhtml set foldmethod=syntax
+" au FileType html set foldmethod=syntax
+au FileType xml set foldmethod=syntax
+au FileType html set foldmethod=syntax
 set foldlevel=100 "Don't autofold anything
-

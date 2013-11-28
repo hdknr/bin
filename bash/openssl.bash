@@ -37,6 +37,11 @@ function PUBKEY_DUMP()
     openssl  pkey -pubin -in $1 -text -noout
 } 
 
+function PKEY_DUMP()
+{
+    openssl  pkey -in $1 -text -noout
+} 
+
 function MKPKCS12()
 { 
     USAGE="MKPKCS12 key cert [output [ intermidiate ] ]";
