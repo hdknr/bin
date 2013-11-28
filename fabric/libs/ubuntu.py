@@ -55,9 +55,12 @@ def install_rbenv():
 def install_pyenv():
     _install_deb_packages('/fabric/res/ubuntu.packages.pyenv.list' )
     _run("git clone git://github.com/yyuu/pyenv.git .pyenv")
+    _fetch_file("/env/pyenv.bash","$HOME/.bash_extra/pyenv.bash")
 
 def install_bin():
-    _run("git clone https://github.com/hdknr/bin.git")
+#    _run("git clone https://github.com/hdknr/bin.git")
+    _run("mkdir -p ~/.vim/bundle")
+    _run("git clone git://github.com/Shougo/neobundle.vim $HOME/.vim/bundle/neobundle.vim")  
 
 def update_bin():
     _run("cd bin && git pull")
