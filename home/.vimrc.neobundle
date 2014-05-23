@@ -34,6 +34,8 @@ NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 NeoBundle 'klen/python-mode'
 " PEP8 indent
 NeoBundle 'hynek/vim-python-pep8-indent'
+" authopep8 
+NeoBundle 'tell-k/vim-autopep8'
 " Completion
 NeoBundle 'davidhalter/jedi-vim'    
 " -----  pip install jedi
