@@ -2,10 +2,9 @@
 "
 filetype off
 
-"
+" --- Using NeoBundle for managing Vim plugins
 source ~/bin/home/.vimrc.neobundle
-
-
+"
 syntax on
 filetype plugin on
 "colorscheme jellybeans
@@ -61,7 +60,6 @@ endfunction
 
 "--- You complete things with CTRL-X O.
 "
-autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -99,3 +97,11 @@ let g:html_syntax_folding=3
 au FileType xml set foldmethod=syntax
 au FileType html set foldmethod=syntax
 set foldlevel=100 "Don't autofold anything
+
+" -- for Python 
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python setl autoindent
+autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
+" disable python-mode for vim-python-pep8-indent
+let g:pymode_indent = 0

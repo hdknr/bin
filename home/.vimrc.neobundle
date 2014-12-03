@@ -13,11 +13,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
 NeoBundle 'Shougo/vimproc'
 
-
 "
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'mattn/gist-vim'
+" My Private Things
 NeoBundle 'hdknr/orevim'
 NeoBundle 'vim-scripts/rest.vim'
 "
@@ -29,6 +29,18 @@ NeoBundle 'vim-scripts/rest.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+" Python -------------------
+" PEP8
+NeoBundle 'klen/python-mode'
+" PEP8 indent
+NeoBundle 'hynek/vim-python-pep8-indent'
+" authopep8 
+NeoBundle 'tell-k/vim-autopep8'
+" Completion
+NeoBundle 'davidhalter/jedi-vim'    
+" -----  pip install jedi
+" ----- cd ~/.vim/bundle/jedi-vim ; git submodule update --init
 
 " vim-scripts repos
 NeoBundle 'L9'

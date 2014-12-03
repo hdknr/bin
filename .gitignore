@@ -4,3 +4,4 @@ kerl
 .DS_Store
 *.fab
 *.log
+.ropeproject
