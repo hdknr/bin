@@ -5,3 +5,4 @@ kerl
 *.fab
 *.log
 .ropeproject
+.conf
