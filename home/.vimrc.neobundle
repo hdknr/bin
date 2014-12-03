@@ -19,6 +19,7 @@ NeoBundle 'thinca/vim-ref'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'hdknr/orevim'
+NeoBundle 'vim-scripts/rest.vim'
 "
 
 " My Bundles here:
@@ -42,6 +43,10 @@ NeoBundle 'git://git.wincent.com/command-t.git'
 NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
 NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
 
+" colors
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'sjl/badwolf'
+
 " ...
 
 " filetype plugin indent on     " Required!
@@ -53,3 +58,4 @@ NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
 
 " Installation check.
 NeoBundleCheck
+

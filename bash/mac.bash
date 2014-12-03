@@ -34,3 +34,15 @@ function GVIM()
 {
     /Applications/MacVim.app/Contents/MacOS/Vim -g -f
 }
+
+function RST()
+{
+  if [ -n "$1" ] ; then
+    [ -f "style.css" ] && S="--stylesheet=style.css --syntax-highlight=short" || S="";
+    #rst2html5 $1 $S > $1.html ; open $1.html;
+    rst2html.py $1 $S > $1.html ; open $1.html;
+  fi
+}
+
+alias SW="xcrun --sdk iphonesimulator8.0 swift"
+alias SWC="xcrun --sdk iphonesimulator8.0 swiftc"

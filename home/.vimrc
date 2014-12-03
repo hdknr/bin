@@ -8,7 +8,8 @@ source ~/bin/home/.vimrc.neobundle
 
 syntax on
 filetype plugin on
-colorscheme elflord
+"colorscheme jellybeans
+colorscheme badwolf
 " ** pydiction **
 let g:pydiction_location = '/home/hdknr/.vim/after/ftplugin/pydiction/complete-dict'
 let g:pydiction_menu_height = 20
@@ -16,12 +17,10 @@ let g:pydiction_menu_height = 20
 set ts=4
 set sw=4
 set expandtab
-colorscheme elflord
 
 " ** github(gist) **
 let g:github_user=$GITHUB_API_USER
 let g:github_token=$GITHUB_API_TOKEN
-
 " taglist si ctags
 "let Tlist_Ctags_Cmd='/usr/bin/ctags'
 "let Tlist_Use_Right_Window = 1

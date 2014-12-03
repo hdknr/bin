@@ -61,3 +61,12 @@ function MKPKCS12()
     fi
     openssl pkcs12 -export $CRT $KEY $MID $OUT
 }
+
+function KEYGEN()
+{
+    if [ "$1" != "" ] ; then
+        # Filename
+        OPT="-f $1" 
+    fi
+    ssh-keygen -t rsa -b 2048 $OPT
+}
