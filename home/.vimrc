@@ -7,8 +7,8 @@ source ~/bin/home/.vimrc.neobundle
 "
 syntax on
 filetype plugin on
-"colorscheme jellybeans
-colorscheme badwolf
+colorscheme jellybeans
+"colorscheme badwolf
 " ** pydiction **
 let g:pydiction_location = '/home/hdknr/.vim/after/ftplugin/pydiction/complete-dict'
 let g:pydiction_menu_height = 20
@@ -105,3 +105,5 @@ autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,exc
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 " disable python-mode for vim-python-pep8-indent
 let g:pymode_indent = 0
+" --- jellybeans
+let g:jellybeans_use_lowcolor_black = 0
