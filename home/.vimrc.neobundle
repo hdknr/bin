@@ -60,6 +60,10 @@ NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'sjl/badwolf'
 
+" Markdown  ( https://github.com/rcmdnk/vim-markdown
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'rcmdnk/vim-markdown'
+
 " ...
 
 " filetype plugin indent on     " Required!
