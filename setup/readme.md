@@ -9,6 +9,7 @@
 
 ```
 ~/bin/setup/phpenv.bash
+source ~/bin/env/phpenv.bash
 ```
 
 # .hgrc initalizer
