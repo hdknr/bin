@@ -1,27 +1,40 @@
-# vim + neobundle
+# Tools
+
+## vim + neobundle
 
 ```
 ~/bin/setup/neobundle.bash
 ```
 
-# phpenv
+## tmux
 
+```
+~/bin/setup/tmux.bash
+```
+
+# Language Runtime
+
+## phpenv
 
 ```
 ~/bin/setup/phpenv.bash
 source ~/bin/env/phpenv.bash
 ```
 
-# .hgrc initalizer
+## Erlang/OTP
+
+```
+~/bin/setup/kerl.bash
+```
+
+
+# Utility
+
+## .hgrc initalizer
 
 ```
 ~/bin/setup/hgrc.bash
 ```
 
-# Erlang/OTP
-
-```
-~/bin/setup/kerl.bash
-```
 
 
