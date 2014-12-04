@@ -20,6 +20,12 @@
 ~/bin/setup/phpenv.bash
 source ~/bin/env/phpenv.bash
 ```
+## pyenv
+
+```
+~/bin/setup/pyenv.bash
+source ~/bin/env/pyenv.bash
+```
 
 ## Erlang/OTP
 
