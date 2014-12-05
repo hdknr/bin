@@ -34,17 +34,36 @@ SHOW_DATABASESE()
  echo "show databases" | mysql  -u $DBROOT_USER --password=$DBROOT_PASSWD
 }
 
-MYSQL_DUMP()
+
+MYSQL_DUMP_DDL()
 {
-    #: --skip-extended-insert  : line by line
-    #: -c : full column names 
 OPT=(
 "--routines"
+"--triggers"
+"-d"
+)
+    CMD="mysqldump -u $DBROOT_USER --password=$DBROOT_PASSWD ${OPT[@]} $1 $2";
+    $CMD;
+}
+
+MYSQL_DUMP_DATA()
+{
+
+#: --skip-extended-insert  : line by line
+#: -c : full column names 
+#: -t : no DDL
+
+OPT=(
 "--skip-extended-insert"
 "-c"
 "-t"
 )
-   
-    echo "mysqldump -u $DBROOT_USER --password=$DBROOT_PASSWD ${OPT[@]} $1 $2"
-    mysqldump -u $DBROOT_USER --password=$DBROOT_PASSWD ${OPT[@]} $1 $2 
+    CMD="mysqldump -u $DBROOT_USER --password=$DBROOT_PASSWD ${OPT[@]} $1 $2";
+    $CMD;
+}
+
+MYSQL_DUMP_ALL()
+{
+    MYSQL_DUMP_DDL $1 $2;
+    MYSQL_DUMP_DATA $1 $2;
 }
