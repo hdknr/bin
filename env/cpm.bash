@@ -3,5 +3,5 @@
 # 
 function CPM_DUMP()
 {
-gpg --decrypt ~/.cpmdb | gzip -cd | xmllint --format
+gpg --decrypt ~/.cpmdb | gzip -cd | xmllint --format -
 }
