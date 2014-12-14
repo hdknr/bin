@@ -1,4 +1,4 @@
-CREATE_MYSQL_DB()
+MYSQL_CREATE_DB()
 {
     if [ "$DBROOT_USER" == "" ] ;then 
         echo "configure ~/.bash_extra/conf.bash to define DBROOT_USER & _PASSWD" ; 
@@ -23,13 +23,13 @@ CREATE_MYSQL_DB()
     
 }
 
-DROP_MYSQL_DB()
+MYSQL_DROP_DB()
 {
     if [ "$1" != "" ] ;then
         echo "drop database $1" | mysql  -u $DBROOT_USER --password=$DBROOT_PASSWD
     fi
 }
-SHOW_DATABASESE()
+MYSQL_SHOW_DATABASESE()
 {
  echo "show databases" | mysql  -u $DBROOT_USER --password=$DBROOT_PASSWD
 }
@@ -38,11 +38,22 @@ SHOW_DATABASESE()
 MYSQL_DUMP_DDL()
 {
 OPT=(
-"--routines"
-"--triggers"
 "-d"
 )
     CMD="mysqldump -u $DBROOT_USER --password=$DBROOT_PASSWD ${OPT[@]} $1 $2";
+    $CMD;
+}
+
+MYSQL_DUMP_PROCEDURES()
+{
+OPT=(
+"--routines"
+"--no-create-info"
+"--no-data"
+"--no-create-db"
+"--skip-opt"
+)
+    CMD="mysqldump -u $DBROOT_USER --password=$DBROOT_PASSWD ${OPT[@]} $1";
     $CMD;
 }
 

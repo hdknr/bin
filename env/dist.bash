@@ -1,4 +1,4 @@
-#!/bin/bash
+function DIST_PRINT(){
 
 if [ ! -z "`which lsb_release`" ] ; then
     export DIST=`lsb_release -s -i`
@@ -14,3 +14,4 @@ esac
 
 echo "Distribution is $DIST."
 echo "Apache is $APACHE(USER=$APACHE_USER)."
+}

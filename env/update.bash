@@ -1,13 +1,4 @@
-#!/bin/bash
-
-P=`dirname $0`
-if [ $P == '.' ] ; then
-    BASE='..'
-else
-    BASE=`dirname $P`
-fi
-
-source  $BASE/bash/dist.bash
+function SYS_UPDATE() {
 
 if [ -n "$NTPSERVER" ] ;then
     sudo ntpdate $NTPSERVER ;
@@ -15,11 +6,15 @@ else
     sudo ntpdate time.apple.com
 fi
 
-case $DIST in 
-  'Debian') sudo aptitude update ; sudo aptitude safe-upgrade -y ;; 
-  'Ubuntu') sudo aptitude update ; sudo aptitude safe-upgrade -y ;; 
-  'CentOS') sudo yum update -y ;;
-esac
+if [ -n `which apt-get` ] ; then 
+ sudo aptitude update ; 
+ sudo aptitude safe-upgrade -y ;
+fi 
+
+if [ -n `whiich yum` ] ; then
+  sudo yum update -y ;
+fi
+
 
 #
 # bin/* 
@@ -27,3 +22,4 @@ pushd .
 cd ~/bin/
 git pull
 popd 
+}
