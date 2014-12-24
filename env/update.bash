@@ -1,20 +1,21 @@
 function SYS_UPDATE() {
 
 if [ -n "$NTPSERVER" ] ;then
-    sudo ntpdate $NTPSERVER ;
+    ST="sudo ntpdate $NTPSERVER" ;
 else
-    sudo ntpdate time.apple.com
+    ST="sudo ntpdate time.apple.com";
 fi
 
 if [ -n "`which apt-get`" ] ; then 
- sudo aptitude update ; 
- sudo aptitude safe-upgrade -y ;
-fi 
-
-if [ -n "`which yum`" ] ; then
+  $ST;
+  sudo aptitude update ; 
+  sudo aptitude safe-upgrade -y ;
+elif [ -n "`which yum`" ] ; then
+  $ST;
   sudo yum update -y ;
+elif [ -n "`which brew`" ] ; then
+  brew update;
 fi
-
 
 #
 # bin/* 
