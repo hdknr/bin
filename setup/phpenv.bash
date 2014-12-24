@@ -1,6 +1,15 @@
 #/bin/bash
+source `dirname $0`/conf.bash
+BIN_INIT phpenv
 
-DEBIAN=(
+if [ -d ~/.phpenv ]; then
+   echo "phpenv seems to to be already installed.";
+   BIN_EXIT;
+fi
+
+case "$BIN_OS" in 
+  "DEBIAN") 
+    PKGS=(
     git
     git-core
     curl
@@ -15,10 +24,13 @@ DEBIAN=(
     libtidy-dev
     libxslt1-dev
     autoconf
-)
+    );;
+ "CENTOS") ;;
+ "OSX");;
+esac;
 
-# Debian
-[ -n "`/usr/bin/apt-get`" ] && sudo apt-get update && sudo apt-get install "${DEBIAN[@]}" -y
+# Package Install
+$BIN_PKG "${PKGS[@]}";
 
 # Install
 curl https://raw.githubusercontent.com/CHH/phpenv/master/bin/phpenv-install.sh | bash

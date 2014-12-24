@@ -1,6 +1,14 @@
 #/bin/bash
+source `dirname $0`/conf.bash
+BIN_INIT pyenv
 
-DEBIAN=(
+if [ -d ".pyenv" ] ; then
+    BIN_EXIT;
+fi
+
+case "$BIN_OS" in 
+  "DEBIAN") 
+    PKGS=(
     build-essential
     curl
     libbz2-dev
@@ -11,9 +19,9 @@ DEBIAN=(
     make
     wget
     zlib1g-dev
-)
-
-REDHAT=(
+    );;
+ "CENTOS")   
+    PKGS=(
     bzip2
     bzip2-devel
     gcc
@@ -29,18 +37,14 @@ REDHAT=(
     sqlite-devel
     vim
     zlib-devel
-)
+    );;
+esac;
 
-# Packages
-[ -n "`which apt-get`" ] && sudo apt-get update && sudo apt-get install "${DEBIAN[@]}" -y
-[ -n "`which yum`" ] && sudo apt-get update && sudo apt-get install "${REDHAT[@]}" -y
+$BIN_PKG "${PKGS[@]}";
 
 # pyenv Install
 cd
 git clone git://github.com/yyuu/pyenv.git .pyenv
 
-
 # pyenv-virtual 
 git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
-
-echo "source ~/bin/env/pyenv.bash"
