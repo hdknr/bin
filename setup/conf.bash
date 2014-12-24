@@ -22,14 +22,3 @@ function BIN_EXIT()
     unset BIN_OS; unset BIN_PKG;
     exit;
 }
-
-function PACKAGES()
-{   
-    if [ -n "`which ap-get`" ]; then
-        sudo apt-get update && apt-get install -y $@; 
-    elif [ -n "`which yum`" ]; then  
-        sudo yum install $@;
-    elif [ -n "`which brew`" ]; then
-        brew install $@;
-    fi    
-}
