@@ -74,7 +74,7 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd InsertLeave * set nocursorline
 autocmd InsertEnter * set cursorline
 ""Highlight cursor
-highlight CursorLine ctermbg=8 cterm=NONE
+highlight CursorLine ctermbg=7 cterm=NONE
 
 
 

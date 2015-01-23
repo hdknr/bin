@@ -9,17 +9,18 @@ MYSQL_CREATE_DB()
         echo "Specify Database Name" ; 
         return 2>&- || exit;
     fi
+
     DB=$1;
     US=$DB;
     PW=$DB;
     if [ "$2" != "" ] ; then US=$2;PW=$2; fi;
     if [ "$3" != "" ] ; then PW=$3 ; fi;
 
-    echo $DB, $US, $PW
-    echo "CREATE DATABASE $DB DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;"
-    echo "CREATE DATABASE $DB DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;" | mysql -u $DBROOT_USER --password=$DBROOT_PASSWD
-    echo "GRANT ALL on $DB.* to $US@% identified by $PW WITH GRANT OPTION;"
-    echo "GRANT ALL on $DB.* to '$US'@'localhost' identified by '$PW' WITH GRANT OPTION;"| mysql -u $DBROOT_USER --password=$DBROOT_PASSWD
+    SQL="CREATE DATABASE $DB DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;"; echo $SQL;
+    echo $SQL | mysql -u $DBROOT_USER --password=$DBROOT_PASSWD
+
+    SQL="GRANT ALL on $DB.* to '$US'@'localhost' identified by '$PW' WITH GRANT OPTION;" ; echo $SQL;
+    echo $SQL | mysql -u $DBROOT_USER --password=$DBROOT_PASSWD
     
 }
 
