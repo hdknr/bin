@@ -8,7 +8,7 @@ function BIN_INIT()
     [ -n "$1" ]  && SET_ENV $1;
     if [ -n "`which apt-get`" ]; then
         export BIN_OS="DEBIAN";
-        export BIN_PKG="sudo apt-get update && apt-get install -y";
+        export BIN_PKG="sudo apt-get update && sudo apt-get install -y";
     elif [ -n "`which yum`" ]; then  
         export BIN_OS="CENTOS";
         export BIN_PKG= "yum install";
