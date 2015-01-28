@@ -2,6 +2,7 @@
 
 EXTRA='
 mkdir -p ~/.bash_extra; 
+touch ~/.bash_extra/readme;
 for sc  in ~/.bash_extra/* ; do
   source $sc ; 
 done
