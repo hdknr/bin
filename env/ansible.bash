@@ -19,7 +19,13 @@ function ANSIBLE_PLAYBOOK_DEBINIT()
 
 function ANSIBLE_SSH()
 {
-  eval "`~/bin/env/ansible/axe.py ssh $@`";
+  PARAMS="$@"; [ -n "$PARAMS" ] || PARAMS="default";
+
+  if [ -f ssh.conf ]; then
+    ssh -F ssh.conf $PARAMS; 
+  else
+    eval "`~/bin/env/ansible/axe.py ssh $PARAMS`";
+  fi
 }
 
 function ANSIBLE_TMUX()
