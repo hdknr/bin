@@ -17,4 +17,12 @@ function ANSIBLE_PLAYBOOK_DEBINIT()
 
 }
 
+function ANSIBLE_SSH()
+{
+  eval "`~/bin/env/ansible/axe.py ssh $@`";
+}
 
+function ANSIBLE_TMUX()
+{
+  eval "`~/bin/env/ansible/axe.py tmux $@`";
+}
