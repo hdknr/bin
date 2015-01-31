@@ -26,3 +26,33 @@ function ANSIBLE_TMUX()
 {
   eval "`~/bin/env/ansible/axe.py tmux $@`";
 }
+
+function ANSIBLE_INIT()
+{
+  cat > ansible.cfg << EOF
+[ssh_connection]
+ssh_args = -F ssh.conf
+
+[defaults]
+hostfile = hosts
+EOF
+
+ cat > hosts << EOF
+[server]
+default
+EOF
+
+ cat > ssh.conf << EOF
+Host default 
+  HostName $(basename $PWD)
+  User ${USER}
+  Port 22
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile ~/.ssh/id_rsa 
+  IdentitiesOnly yes
+  LogLevel FATAL
+EOF
+
+}
