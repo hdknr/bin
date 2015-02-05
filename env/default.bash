@@ -1,4 +1,5 @@
 set -o vi
+export BINGIT=https://raw.githubusercontent.com/hdknr/bin/master
 
 function WEB()
 {
