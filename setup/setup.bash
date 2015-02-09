@@ -1,11 +1,13 @@
 #!/bin/bash
 
-EXTRA='
-mkdir -p ~/.bash_extra; 
-for sc  in ~/.bash_extra/* ; do
+X=~/.bash_extra
+EXTRA="
+mkdir -p $X; 
+touch $X/readme;
+for sc  in $X/* ; do
   source $sc ; 
 done
-';
+";
 
 if [ "`which apt-get`" != "" ]; then
   BS=~/.bashrc
@@ -21,3 +23,5 @@ else
   echo "# EXTRA CONFIGURATION" >> $BS;
   echo $EXTRA >> $BS;  
 fi
+
+[ -s "$X/default.bash" ] || ln -s ~/bin/env/default.bash  $X/0.default.bash

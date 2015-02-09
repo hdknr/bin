@@ -1,24 +1,62 @@
-function SSL_X509(){
-    echo "q" | openssl s_client -showcerts -connect $1:443 2>/dev/null | openssl x509 -noout -text
-}
-
-function X509DUMP()
+function X509_FROM_HOST()
+{
+    # $1 Server Host
+    echo "q" | openssl s_client -showcerts -connect $1:443 2>/dev/null 
+} 
+function X509_FROM_PEM()
 {
     openssl x509 -noout -text -in $1
 }
 
-function X509FINGERPRINT()
+function X509_TO_DER()
 {
-    openssl x509 -md5 -noout -fingerprint -in $1
-    openssl x509 -sha1 -noout -fingerprint -in $1
+    # expect stdio
+    openssl x509  -outform DER
 }
 
-function X509_PUB_FROM_CERT()
+function X509_TO_PEM()
 {
-    openssl x509 -pubkey  -inform PEM  -in  $1 -noout
+    # expect stdio
+    openssl x509  -outform PEM
 }
 
+function X509_TO_TEXT(){
+    # expect stdio
+    openssl x509 -noout -text
+}
 
+function X509_DUMP_MD5()
+{
+    openssl x509 -md5 -noout -fingerprint 
+}
+
+function X509_DUMP_SHA1()
+{
+    openssl x509 -sha1 -noout -fingerprint
+}
+
+function X509_TO_PUBKEY_PEM()
+{
+    openssl x509 -pubkey  -noout
+}
+
+function X509_TO_PUBKEY_DER()
+{
+    openssl x509 -pubkey  -noout -outform DER
+}
+
+## PublicKey
+
+function PUBKEY_FROM_PEM()
+{
+     openssl pkey -pubin -in $1
+}
+function PUBKEY_TO_TEXT()
+{
+     openssl pkey -pubin -text -noout
+}
+
+#####
 function PKEY_MODULUS()
 {
     openssl rsa -in $1  -modulus -noout
@@ -32,14 +70,10 @@ function PUBKEY_FROM_PKEY()
     openssl rsa -in $1  -out $1.pub -pubout
 }
 
-function PUBKEY_DUMP()
-{
-    openssl  pkey -pubin -in $1 -text -noout
-} 
 
 function PKEY_DUMP()
 {
-    openssl  pkey -in $1 -text -noout
+    openssl pkey -in $1 -text -noout
 } 
 
 function MKPKCS12()

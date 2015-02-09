@@ -40,7 +40,7 @@ case "$BIN_OS" in
     );;
 esac;
 
-$BIN_PKG "${PKGS[@]}";
+eval "$BIN_PKG ${PKGS[@]}";
 
 # pyenv Install
 cd

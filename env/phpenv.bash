@@ -17,3 +17,4 @@ function PHP_SET_PATH()
     PHP_SET_VER;
     export PHP_PATH=$HOME/.phpenv/versions/$PHP_VER;
 }
+

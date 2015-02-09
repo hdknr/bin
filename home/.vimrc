@@ -8,7 +8,7 @@ source ~/bin/home/.vimrc.neobundle
 syntax on
 filetype plugin on
 "colorscheme jellybeans
-"colorscheme badwolf
+" colorscheme badwolf
 " ** pydiction **
 let g:pydiction_location = '/home/hdknr/.vim/after/ftplugin/pydiction/complete-dict'
 let g:pydiction_menu_height = 20
@@ -74,7 +74,7 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd InsertLeave * set nocursorline
 autocmd InsertEnter * set cursorline
 ""Highlight cursor
-highlight CursorLine ctermbg=8 cterm=NONE
+highlight CursorLine ctermbg=7 cterm=NONE
 
 
 
