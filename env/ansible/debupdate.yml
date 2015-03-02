@@ -1,0 +1,7 @@
+- hosts: all
+  sudo: true
+  tasks:
+    - name: Update apt repository
+      apt: update_cache=yes state=latest
+    - name: "Upgrade Packages"
+      apt: upgrade=yes state=latest
