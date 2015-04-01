@@ -43,8 +43,8 @@ esac;
 eval "$BIN_PKG ${PKGS[@]}";
 
 # pyenv Install
-cd
-git clone git://github.com/yyuu/pyenv.git .pyenv
+# cd
+# git clone git://github.com/yyuu/pyenv.git .pyenv
 
 # pyenv-virtual 
-git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+# git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
