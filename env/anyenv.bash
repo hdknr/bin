@@ -10,3 +10,8 @@ function ANYENV_PLUGIN()
     mkdir -p $(anyenv root)/plugins;
     git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update;
 }
+
+function ANYENV_PYENV_VIRTUALENV()
+{
+    git clone https://github.com/yyuu/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+}
