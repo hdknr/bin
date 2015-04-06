@@ -7,3 +7,19 @@ function DJ()
         C=`dirname $C`
     done;
 }
+
+function DJMM()
+{
+    if [ -d migrations ]; then
+        APP=${PWD##*/}; 
+        DJ makemigrations $APP 
+    fi    
+}
+
+function DJMG()
+{
+    if [ -d migrations ]; then
+        APP=${PWD##*/}; 
+        DJ migrate $APP 
+    fi    
+}
