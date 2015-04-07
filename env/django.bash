@@ -23,3 +23,17 @@ function DJMG()
         DJ migrate $APP 
     fi    
 }
+
+function DJDB()
+{
+    DJ dbshell $@;
+}
+
+function DJPV()
+{
+    C=$PWD;
+    while [ "$C" != / ]; do
+        [ -f "$C/pavement.py" ] && { paver -f $C/pavement.py $@; break; };
+        C=`dirname $C`
+    done;
+}
