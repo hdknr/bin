@@ -15,3 +15,8 @@ function ANYENV_PYENV_VIRTUALENV()
 {
     git clone https://github.com/yyuu/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 }
+
+function cdvirtualenv()
+{
+  cd $VIRTUAL_ENV;
+}
