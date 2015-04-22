@@ -105,3 +105,6 @@ autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,exc
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 " disable python-mode for vim-python-pep8-indent
 let g:pymode_indent = 0
+
+" -- for HTML
+autocmd FileType html setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
