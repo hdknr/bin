@@ -1,13 +1,16 @@
 #!/bin/bash
 
 X=~/.bash_extra
+mkdir -p $X;
+
 EXTRA="
 mkdir -p $X; 
 touch $X/readme;
 for sc  in $X/* ; do
-  source $sc ; 
+  source \$sc ; 
 done
 ";
+
 
 if [ "`which apt-get`" != "" ]; then
   BS=~/.bashrc
