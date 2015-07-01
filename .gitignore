@@ -6,3 +6,4 @@ kerl
 *.log
 .ropeproject
 .conf
+_files
