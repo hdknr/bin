@@ -29,6 +29,7 @@ case "$BIN_OS" in
     autoconf
     );;
  "CENTOS") 
+    yum groupinstall "Development Tools";
     PKGS=(
     enchant-devel
     freetype-devel
