@@ -37,3 +37,10 @@ function DJPV()
         C=`dirname $C`
     done;
 }
+
+function DJTEST()
+{
+    # pip install django-test-without-migrations
+    # INSTALLED_APPS += ('test_without_migrations',)
+    DJ test --nomigrations --keepdb $@
+}

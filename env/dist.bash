@@ -1,17 +1,16 @@
-function DIST_PRINT(){
+for i in apt-get yum brew; do
+    export PKG=`which $i`
+    if [ -n "$PKG" ]; then break; fi;
+done
 
-if [ ! -z "`which lsb_release`" ] ; then
-    export DIST=`lsb_release -s -i`
-else [ -f /etc/debian_version ]  
-    export DIST='Debian'
+if [ -n "$PKG" ]; then
+    export DISTRIB=$(grep PRETTY_NAME /etc/*-release | sed -E  "s/(.+)\((.+)\).+/\2/")
 fi
-#
-case $DIST in 
-  'Debian') export APACHE_USER=www-data ; APACHE=apache2;;
-  'Ubuntu') export APACHE_USER=www-data ; APACHE=apache2;;
-  'CentOS') export APACHE_USER=apache   ; APACHE=httpd;;
-esac
 
-echo "Distribution is $DIST."
-echo "Apache is $APACHE(USER=$APACHE_USER)."
+distrib(){
+    echo $(grep PRETTY_NAME /etc/*-release | sed -E  "s/(.+)\((.+)\).+/\2/")
+}
+
+if_deb(){
+ [[ `distrib` == $1 ]];
 }
