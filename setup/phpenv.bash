@@ -7,16 +7,19 @@ if [ -d ~/.phpenv ]; then
    BIN_EXIT;
 fi
 
+if [ -d ~/.anyenv/envs/phpenv ]; then
+   echo "anyenv+phpenv seems to to be already installed.";
+   BIN_EXIT;
+fi
+
 case "$BIN_OS" in 
   "DEBIAN") 
     PKGS=(
-    git
-    git-core
-    curl
+    git git-core
+    curl libcurl4-gnutls-dev
     build-essential
     libxml2-dev
     libssl-dev
-    libcurl4-gnutls-dev
     libjpeg-dev
     libpng12-dev
     libmcrypt-dev
@@ -25,16 +28,37 @@ case "$BIN_OS" in
     libxslt1-dev
     autoconf
     );;
- "CENTOS") ;;
+ "CENTOS") 
+    PKGS=(
+    enchant-devel
+    freetype-devel
+    gettext-devel
+    gmp-devel
+    libXpm-devel
+    libc-client-devel
+    libcurl curl-devel
+    libicu libicu-devel
+    libjpeg-devel
+    libpng-devel
+    libtidy-devel
+    libxml2-devel
+    libxslt-devel
+    libxslt-devel
+    net-snmp-devel
+    t1lib-devel
+    );;
  "OSX");;
 esac;
 
 # Package Install
 $BIN_PKG "${PKGS[@]}";
 
-# Install
-curl https://raw.githubusercontent.com/CHH/phpenv/master/bin/phpenv-install.sh | bash
+if [ "$(which anyevn)" == "" ]; then
+    # Install
+    curl https://raw.githubusercontent.com/CHH/phpenv/master/bin/phpenv-install.sh | bash
 
-# php-build
-
-git clone git://github.com/CHH/php-build.git ~/.phpenv/plugins/php-build
+    # php-build
+    git clone git://github.com/CHH/php-build.git ~/.phpenv/plugins/php-build
+else
+    anyenv install phpenv
+fi
