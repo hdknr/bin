@@ -1,21 +1,9 @@
-#/bin/bash
-source `dirname $0`/conf.bash
-BIN_INIT tmux
-
+#!/bin/bash
 # .tmux.conf
-[ -f ~/bin/home/.tmux.conf  ] || cp ~/bin/home/.tmux.conf ~/.tmux.conf;
+[ -f ~/.tmux.conf ] || cp ~/bin/home/.tmux.conf ~/.tmux.conf;
 
-if [ -n "`which tmux`"  ]; then
-    BIN_EXIT;
+if which tmux >/dev/null; then
+    echo exists
+else
+    echo install tmux with ansible playbook
 fi
-
-case "$BIN_OS" in 
-  "DEBIAN") 
-    PKGS=(tmux);;
- "CENTOS")   
-    PKGS=(tmux);;
- "OSX")
-    PKGS=(tmux);;
-esac;
-
-$BIN_PKG "${PKGS[@]}";
