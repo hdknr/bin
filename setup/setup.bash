@@ -27,4 +27,4 @@ else
   echo $EXTRA >> $BS;  
 fi
 
-[ -s "$X/default.bash" ] || ln -s ~/bin/env/default.bash  $X/0.default.bash
+[ -s "$X/0.default.bash" ] || ln -s ~/bin/env/default.bash  $X/0.default.bash
