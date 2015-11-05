@@ -11,14 +11,7 @@ for sc  in $X/* ; do
 done
 ";
 
-
-if [ "`which apt-get`" != "" ]; then
-  BS=~/.bashrc
-elif [ "`which yum`" != "" ] ; then
-  BS=~/.bashrc
-elif [ "`which brew`" != "" ]; then
-  BS=~/.bash_profile
-fi
+BS=~/.bashrc
 
 if grep -q bash_extra $BS; then
   echo "alrady configured";
@@ -27,4 +20,4 @@ else
   echo $EXTRA >> $BS;  
 fi
 
-[ -s "$X/default.bash" ] || ln -s ~/bin/env/default.bash  $X/0.default.bash
+[ -s "$X/0.default.bash" ] || ln -s ~/bin/env/default.bash  $X/0.default.bash
