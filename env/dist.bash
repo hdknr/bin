@@ -3,10 +3,6 @@ for i in apt-get yum brew; do
     if [ -n "$PKG" ]; then break; fi;
 done
 
-if [ -n "$PKG" ]; then
-    export DISTRIB=$(grep PRETTY_NAME /etc/*-release | sed -E  "s/(.+)\((.+)\).+/\2/")
-fi
-
 distrib(){
     echo $(grep PRETTY_NAME /etc/*-release | sed -E  "s/(.+)\((.+)\).+/\2/")
 }
