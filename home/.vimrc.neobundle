@@ -49,10 +49,8 @@ NeoBundle 'FuzzyFinder'
  NeoBundle 'python_ifold' 
 
 " Non github repos
-NeoBundle 'git://git.wincent.com/command-t.git'
+NeoBundle 'https://github.com/wincent/command-t.git'
 
-" Non git repos
-NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
 
 " colors
 NeoBundle 'nanotech/jellybeans.vim'
