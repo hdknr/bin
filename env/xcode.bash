@@ -1,9 +1,11 @@
 function XCODE_LISTUDID()
 {
-    # https://github.com/duttski/listudids/blob/master/listudids
-    GREP_OPTIONS=;
-    FILE=$1
-    for provisionFile in $( unzip -l "$FILE" | grep embedded.mobileprovision | awk '{$1=$2=$3=""; print $0}' | sed "s/^[ \t]*//" ); do
-        unzip -p $FILE $provisionFile | security cms -D | python -c "import plistlib as p, sys as s; print '\n'.join(p.readPlist(s.stdin)['ProvisionedDevices']);";
-    done
+CODE="
+from plistlib import readPlist;
+from sys import stdin;
+print '\n'.join(readPlist(stdin)['ProvisionedDevices']);
+"
+IPA=$1
+exml=$(unzip -Z1 $IPA | GREP_OPTIONS= grep mobileprovision)
+unzip -p $IPA ${exml[0]} | security cms -D | python -c "$CODE"
 }
