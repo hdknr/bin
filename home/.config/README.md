@@ -1,4 +1,15 @@
+
 - [NeoVim と dein.vim を使ってみる!](http://qiita.com/Ress/items/7e71e007cf8d41a07a1a)
+
+
+# setup
+
+~~~bash
+$ cd
+$ mkdir -p .config ; cd .config 
+$ ln -s bin/home/.config/nvim . 
+$ ln -s bin/home/.config/dein . 
+~~~
 
 
 
