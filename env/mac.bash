@@ -49,5 +49,11 @@ function RST()
   fi
 }
 
+function IME_RESET()
+{
+   killall JapaneseIM
+}
 alias SW="xcrun --sdk iphonesimulator8.0 swift"
 alias SWC="xcrun --sdk iphonesimulator8.0 swiftc"
+export SELENIUM_SERVER_JAR=/usr/local/Cellar/selenium-server-standalone/2.53.1/libexec/selenium-server-standalone-2.53.1.jar
+
