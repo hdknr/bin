@@ -51,6 +51,7 @@ function RST()
 
 function IME_RESET()
 {
+   # IME の残骸が残ったとき
    killall JapaneseIM
 }
 alias SW="xcrun --sdk iphonesimulator8.0 swift"
