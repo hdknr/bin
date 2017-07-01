@@ -12,8 +12,8 @@ function inArray # ( keyOrValue, arrayKeysOrValues )
 
 function cdpj_reload(){
   if [ -d ~/.bash_extra/cdpj ] ; then
-    for i in $(find ~/.bash_extra/cdpj/ -type l -printf "%f "); do
-      PJ["$i"]=$(readlink -f ~/.bash_extra/cdpj/$i);
+    for i in $(find ~/.bash_extra/cdpj/ -type l -exec basename {} \;); do
+      PJ["$i"]=$(readlink  ~/.bash_extra/cdpj/$i);
     done
   fi
 }
