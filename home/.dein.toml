@@ -46,3 +46,8 @@ on_ft = 'python'
 [[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = 'html'
+
+[[plugins]]
+# sudo apt-get install flak8 python3-flake8
+repo = 'nvie/vim-flake8'
+on_ft = 'python'
