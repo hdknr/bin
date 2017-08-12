@@ -3,19 +3,19 @@
 - Ubuntu Server 16.04 LTS
 
 
-~~bash
+~~~bash
 $ git clone https://github.com/hdknr/bin.git -b ubuntu
-~~
+~~~
 
 tmux:
 
-~~bash
+~~~bash
 $ cp ~/bin/home/.tmux.conf .
-~~
+~~~
 
 vim:
 
-~~bash
+~~~bash
 $ sudo apt-get install vim-nox -y
 $ sudo update-alternatives --config editor
-~~
+~~~
