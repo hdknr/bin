@@ -5,9 +5,19 @@ function ANSIBLE_PB()
 
 function ANSIBLE_OPEN_SSH()
 {
+    # -s : sudo 
+    SUDO=''
+    while getopts s OPT
+    do
+        case $OPT in
+            s)  SUDO='sudo' ;;
+        esac
+    done
+    shift $((OPTIND - 1))
+
   PARAMS="$@"; [ -n "$PARAMS" ] || PARAMS="default";
   if [ -f ssh.conf ]; then
-    SCRIPT="cd $PWD;ssh -F ssh.conf $PARAMS"; 
+    SCRIPT="cd $PWD;$SUDO ssh -F ssh.conf $PARAMS"; 
     AS="osascript -e 'tell application \"Terminal\" to do script \"$SCRIPT\"'";
     eval $AS;
     # osx
