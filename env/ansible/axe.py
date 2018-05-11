@@ -78,8 +78,8 @@ class AnsibleCommand(Command):
         ]
 
         def run(self, params, **options):
-            print ";\n".join(
-                tmux_command(params.group, params.hosts))
+            print(";\n".join(
+                tmux_command(params.group, params.hosts)))
 
     class SshCommand(SubCommand):
         name = "ssh"
@@ -96,7 +96,7 @@ class AnsibleCommand(Command):
         def run(self, params, **options):
             for host in get_hosts(params.group):
                 if host.name in params.hosts:
-                    print get_ssh(host)
+                    print(get_ssh(host))
                     break
 
 if __name__ == '__main__':
