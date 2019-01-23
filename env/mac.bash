@@ -49,6 +49,14 @@ function RST()
   fi
 }
 
+
+function PDF_TO_PNG()
+{
+  # PDF をページごとにPNGにする
+  gs -dNOPAUSE -sDEVICE=png16m -r256 -sOutputFile=$1.%03d.png $1;
+}
+
+
 function IME_RESET()
 {
    # IME の残骸が残ったとき
