@@ -1,0 +1,47 @@
+#!/bin/bash
+PKGS=(
+    apt-utils
+    autoconf
+    bison
+    build-essential
+    cmake
+    curl
+    curl
+    freetds-bin
+    freetds-dev
+    gnupg
+    graphviz
+    graphviz-dev
+    libbz2-dev
+    libcurl4-gnutls-dev
+    libfreetype6
+    libfreetype6-dev
+    libgraphviz-dev
+    libjpeg9-dev
+    libmcrypt-dev
+    libmemcached-dev
+    libmemcached-tools
+    libmysqlclient-dev
+    libreadline-dev
+    libsqlite3-dev
+    libssl-dev
+    libtidy-dev
+    libxml2-dev
+    libxslt1-dev
+    llvm
+    make
+    memcached
+    mysql-server
+    nginx
+    pkg-config
+    re2c
+    supervisor
+    tdsodbc
+    unixodbc
+    unixodbc-dev
+    unzip
+    wget
+    zlib1g-dev
+    vim-nox
+)
+sudo apt update && sudo apt install -y  "${PKGS[@]}"

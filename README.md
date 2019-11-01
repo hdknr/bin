@@ -1,16 +1,16 @@
 # Ubuntu
 
-- Ubuntu Server 16.04 LTS
+- Ubuntu Server 18.04 LTS
 
 
 ~~~bash
-$ git clone https://github.com/hdknr/bin.git -b ubuntu
+$ git clone https://github.com/hdknr/bin.git -b ubuntu-server
 ~~~
 
 linux:
 
 ~~~bash
-$ ~/bin/setup/linux.bash
+$ ~/bin/packages.bash
 ~~~
 
 tmux:
@@ -22,8 +22,5 @@ $ cp ~/bin/home/.tmux.conf .
 vim:
 
 ~~~bash
-$ sudo apt-get install vim-nox -y
 $ sudo update-alternatives --config editor
-$ cp ~/bin/home/.vimrc .
-$ cp ~/bin/home/.dein.toml .
 ~~~
