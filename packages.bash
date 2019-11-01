@@ -43,5 +43,6 @@ PKGS=(
     wget
     zlib1g-dev
     vim-nox
+    tree
 )
 sudo apt update && sudo apt install -y  "${PKGS[@]}"
