@@ -1,5 +1,9 @@
 # macOS
 
+~~~bash
+$ git clone https://github.com/hdknr/bin.git -b macos-zsh
+~~~
+
 ## XCode
 
 - https://developer.apple.com/jp/xcode/
@@ -17,3 +21,13 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 ~~~zsh
 $ ~/bin/packagers.zsh
 ~~~
+
+
+## Configurations
+
+tmux:
+
+~~~bash
+$ cp ~/bin/home/.tmux.conf .
+~~~
+
