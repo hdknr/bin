@@ -30,4 +30,3 @@ tmux:
 ~~~bash
 $ cp ~/bin/home/.tmux.conf .
 ~~~
-
