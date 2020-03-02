@@ -1,15 +1,19 @@
-
 BASE="$HOME"
-ANYENV="$BASE/.anyenv/bin"
 
+if [ -f "$BASE/.anyenv/bin/anyenv" ]; then
+  ANYENV="$BASE/.anyenv/bin:"
+else
+  ANYENV=""
+fi
+     
 
 if [ -d "/usr/local" ]; then
-  export PATH=$ANYENV:/usr/local/sbin:/usr/local/bin:$(getconf PATH);
+  export PATH=${ANYENV}/usr/local/sbin:/usr/local/bin:$(getconf PATH);
 else
-  export PATH=$ANYENV:$(getconf PATH);
+  export PATH=${ANYENV}$(getconf PATH);
 fi
 
-eval "$(${ANYENV}/anyenv init -)";
+eval "$(anyenv init -)";
 
 anyenv envs | while read ENV; do
     eval "$(${ENV} init -)"

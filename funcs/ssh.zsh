@@ -2,6 +2,7 @@
 function SCP()
 {
   PARAMS="$@"; [ -n "$PARAMS" ] || PARAMS="default";
+  echo $PARAMS
   C=$PWD/keys;
   while [ "$C" != / ]; do
     if [ -f "$C/ssh.conf" ]; then
