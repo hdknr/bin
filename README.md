@@ -1,25 +1,16 @@
-# macOS
+# bin 
 
 ~~~bash
-$ git clone https://github.com/hdknr/bin.git -b macos-zsh
+$ git clone https://github.com/hdknr/bin.git
 ~~~
 
-## XCode
+## macOS
 
-- https://developer.apple.com/jp/xcode/
-
-## Homebrew
-
-- https://brew.sh/
+- XCode: https://developer.apple.com/jp/xcode/
+- Homebrew: https://brew.sh/
 
 ~~~zsh
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-~~~
-
-## Packages
-
-~~~zsh
-$ ~/bin/packagers.zsh
 ~~~
 
 
