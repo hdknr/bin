@@ -1,0 +1,33 @@
+#!/bin/bash
+PKGS=(
+    autoconf
+    automake
+    bison
+    cmake
+    curl-devel
+    freetype
+    freetype-devel
+    gcc
+    gcc-c++
+    libcurl-devel
+    libgcc
+    libicu-devel
+    libjpeg-turbo
+    libjpeg-turbo-devel
+    libmcrypt
+    libmcrypt-devel
+    libpng
+    libpng-devel
+    libtidy
+    libtidy-devel
+    libxml2
+    libxml2-devel
+    libxslt
+    libxslt-devel
+    ncurses-devel
+    openssl-devel
+    re2c
+    readline-devel
+    zlib-devel
+)
+sudo yum check-update && sudo yum install -y "${PKGS[@]}"
