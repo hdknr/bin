@@ -26,6 +26,7 @@ PKGS=(
     libtidy-dev
     libxml2-dev
     libxslt1-dev
+    libzip-dev
     llvm
     make
     memcached
