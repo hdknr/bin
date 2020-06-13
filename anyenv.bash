@@ -9,11 +9,11 @@ $HOME/.anyenv/bin/anyenv install --init
 #
 mkdir -p $(anyenv root)/plugins
 git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update;
-source ~/bin/env.bash
+source ~/bin/funcs/env.sh
 #
 anyenv install pyenv
 anyenv install nodenv
-source ~/bin/env.bash
+source ~/bin/funcs/env.sh
 #
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-source ~/bin/env.bash
+source ~/bin/funcs/env.sh
