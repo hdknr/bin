@@ -37,8 +37,8 @@ PKGS=(
     little-cms2
     lzo
     mpfr
-    msodbcsql17
-    mssql-tools
+    # msodbcsql17
+    # mssql-tools
     mysql-client
     mysql-connector-c
     ncurses
@@ -47,7 +47,7 @@ PKGS=(
     openexr
     openjpeg
     openssl
-    openssl@1.1
+    # openssl@1.1
     pango
     pcre
     pcre2
@@ -65,5 +65,6 @@ PKGS=(
     wget
     x265
     xz
+    zsh-completions
 )
 brew update && brew install "${PKGS[@]}"
