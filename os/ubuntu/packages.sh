@@ -15,11 +15,13 @@ PKGS=(
     libfreetype6
     libfreetype6-dev
     libgraphviz-dev
-    libjpeg9-dev
+    libjpeg8-dev 
+    libjpeg-dev
     libmcrypt-dev
     libmemcached-dev
     libmemcached-tools
     libmysqlclient-dev
+    libonig-dev
     libreadline-dev
     libsqlite3-dev
     libssl-dev
