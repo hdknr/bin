@@ -1,5 +1,6 @@
 #!/bin/zsh
 PKGS=(
+    coreutils
     fontconfig
     freetds
     freetype
