@@ -10,6 +10,7 @@ PKGS=(
     gnupg
     graphviz
     graphviz-dev
+    liblzma-dev
     libbz2-dev
     libcurl4-gnutls-dev
     libfreetype6
