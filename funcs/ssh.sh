@@ -7,7 +7,6 @@ function SCP()
   while [ "$C" != / ]; do
     if [ -f "$C/ssh.conf" ]; then
       eval "scp -F $C/ssh.conf $PARAMS"; 
-      # scp -F "${C}/ssh.conf" "${PARAMS}"; 
       break;
     fi
     C=`dirname $C`
@@ -20,7 +19,8 @@ function RSYNC()
   C=$PWD/keys;
   while [ "$C" != / ]; do
     if [ -f "$C/ssh.conf" ]; then
-      rsync -e "ssh -F $C/ssh.conf" $PARAMS; 
+      SSH="ssh -F $C/ssh.conf"
+      eval "rsync -e '$SSH' $PARAMS"; 
       break;
     fi
     C=`dirname $C`
