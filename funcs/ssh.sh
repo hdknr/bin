@@ -6,8 +6,8 @@ function SCP()
   C=$PWD/keys;
   while [ "$C" != / ]; do
     if [ -f "$C/ssh.conf" ]; then
-      echo "scp -F $C/ssh.conf $PARAMS"; 
-      scp -F $C/ssh.conf $PARAMS; 
+      eval "scp -F $C/ssh.conf $PARAMS"; 
+      # scp -F "${C}/ssh.conf" "${PARAMS}"; 
       break;
     fi
     C=`dirname $C`
