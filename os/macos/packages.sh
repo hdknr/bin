@@ -62,6 +62,7 @@ PKGS=(
     tree
     unixodbc
     utf8proc
+    vim
     webp
     wget
     x265
