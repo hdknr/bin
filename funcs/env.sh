@@ -10,7 +10,7 @@ else
   export PATH=${ANYENV}$(getconf PATH);
 fi
 
-if [ ! -z "${ANYENV}" ]; then
+if [[ ! -z "$(command -v anyenv)" ]]; then
   eval "$(anyenv init -)";
   anyenv envs | while read ENV; do
       case "$ENV" in 
