@@ -42,6 +42,8 @@ PKGS=(
     wget
     zip
     zlib1g-dev
+    fonts-ipafont 
+    fonts-ipaexfont
 )
 sudo apt update && sudo apt install -y  "${PKGS[@]}"
 
