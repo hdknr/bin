@@ -4,7 +4,9 @@ else
   ANYENV=""
 fi
 
-if [ -d "/usr/local" ]; then
+if [ -d "/opt/homebrew" ]; then
+  export PATH=${ANYENV}/opt/homebrew/bin:$(getconf PATH);
+elif [ -d "/usr/local" ]; then
   export PATH=${ANYENV}/usr/local/sbin:/usr/local/bin:$(getconf PATH);
 else
   export PATH=${ANYENV}$(getconf PATH);
