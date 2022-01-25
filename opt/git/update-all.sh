@@ -1,6 +1,6 @@
 #!/bin/bash
 BASE=$1
-find ~/projects -maxdepth 1 -type d | while read dn ; do
+find $BASE -maxdepth 1 -type d | while read dn ; do
   if [ -d "$dn/.git" ]; then
     pushd .
     echo "*** ${dn}"
