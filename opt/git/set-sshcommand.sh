@@ -2,6 +2,7 @@
 # .gitignore
 #   .secrets
 
+
 KEY=$1
 FILE=$(basename $1)
 DIR=.secrets
